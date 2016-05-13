@@ -9,7 +9,7 @@ import {
   ListView,
 } from 'react-native';
 
-import BarcodeRow from './BarcodeRow/Component';
+import BarcodeRow from './BarcodeRow';
 
 const styles = StyleSheet.create({
     container: {

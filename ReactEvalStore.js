@@ -3,12 +3,15 @@ import { createStore } from 'redux';
 const defaultBarCodes = [
     {
         code: 'Barcode 1',
+        time: new Date().getTime(),
     },
     {
         code: 'Barcode 2',
+        time: new Date().getTime(),
     },
     {
         code: 'Barcode 3',
+        time: new Date().getTime(),
     },
 ];
 
@@ -22,6 +25,7 @@ function todoStore(state = defaultStore, action) {
         return Object.assign({}, state, {
             barcodes: state.barcodes.concat([{
                 code: action.qrcode,
+                time: new Date().getTime(),
             }]),
         });
 
