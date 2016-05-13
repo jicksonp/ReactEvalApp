@@ -6,7 +6,7 @@ import {
   BackAndroid,
 } from 'react-native';
 
-import store from './todoStore';
+import store from './ReactEvalStore';
 import BarcodeList from './BarcodeList.js';
 
 class ReactTodo extends Component {
