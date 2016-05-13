@@ -14,13 +14,14 @@ const defaultStore = {
 function todoStore(state = defaultStore, action) {
     switch (action.type) {
     case 'ADD_QR_CODE':
+        // Copy the element in front of array.
+        const newArray = [{
+            code: action.qrcode,
+            time: new Date().getTime(),
+        }];
         return Object.assign({}, state, {
-            barcodes: state.barcodes.concat([{
-                code: action.qrcode,
-                time: new Date().getTime(),
-            }]),
+            barcodes: newArray.concat(state.barcodes),
         });
-
     default:
         return state;
     }
