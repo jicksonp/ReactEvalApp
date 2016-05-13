@@ -44,11 +44,17 @@ class ReactTodo extends Component {
         });
     }
 
+    onQrCodeRead(qrcode) {
+        console.log('QRCODE IS:', qrcode);
+    }
+
     renderScene(route, navigator) {
         switch (route.name) {
         case 'qrscanner':
             return (
-                <BarcodeScannerScreen/>
+                <BarcodeScannerScreen
+                    onQrCodeRead={this.onQrCodeRead.bind(this)}
+                />
             );
         default:
             return (
