@@ -18,11 +18,18 @@ class BarcodeScannerScreen extends Component {
         };
     }
 
-    barcodeReceived(e) {
-        console.log('Barcode: ' + e.data);
-        console.log('Type: ' + e.type);
-        this.props.onQrCodeRead(e.data);
-    }
+    //This modification is done to ignore multiple callbacks
+    barcodeReceived = (function() { //TODO why lint shows error here?
+        var executed = false;
+        return function (e) {
+            if (!executed) {
+                executed = true;
+                console.log('Barcode: ' + e.data);
+                console.log('Type: ' + e.type);
+                this.props.onQrCodeRead(e.data);
+            }
+        };
+    })();
 
     render() {
         return (
