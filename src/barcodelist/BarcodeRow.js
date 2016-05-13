@@ -7,6 +7,8 @@ import {
   View,
 } from 'react-native';
 
+import { toDateString } from '../utils/Utils';
+
 const styles = StyleSheet.create({
     container: {
         backgroundColor: '#fff',
@@ -46,7 +48,7 @@ class BarcodeRow extends Component {
                 </Text>
                 <View style={styles.barcode_time_container}>
                     <Text style={styles.barcode_time}>
-                        {this.props.barcode.time}
+                        {toDateString(this.props.barcode.time)}
                     </Text>
                 </View>
             </View>
