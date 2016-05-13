@@ -46,6 +46,11 @@ class ReactTodo extends Component {
 
     onQrCodeRead(qrcode) {
         console.log('QRCODE IS:', qrcode);
+        this.nav.pop();
+        store.dispatch({
+            type: 'ADD_QR_CODE',
+            qrcode,
+        });
     }
 
     renderScene(route, navigator) {

@@ -45,6 +45,16 @@ class BarcodeList extends Component {
         };
     }
 
+    componentWillReceiveProps(nextProps) {
+        const dataSource = this
+            .state
+            .dataSource
+            .cloneWithRows(nextProps.barcodes);
+        // Below comment is used to remove the lint warning.
+        // Do this only when you are sure that you are calling set state using redux store.
+        this.setState({ dataSource }); // eslint-disable-line react/no-set-state
+    }
+
     renderRow(barcode) {
         return (
             <BarcodeRow

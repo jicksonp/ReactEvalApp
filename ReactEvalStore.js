@@ -18,6 +18,13 @@ const defaultStore = {
 
 function todoStore(state = defaultStore, action) {
     switch (action.type) {
+    case 'ADD_QR_CODE':
+        return Object.assign({}, state, {
+            barcodes: state.barcodes.concat([{
+                code: action.qrcode,
+            }]),
+        });
+
     default:
         return state;
     }
