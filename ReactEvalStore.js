@@ -5,14 +5,6 @@ const defaultBarCodes = [
         code: 'Barcode 1',
         time: new Date().getTime(),
     },
-    {
-        code: 'Barcode 2',
-        time: new Date().getTime(),
-    },
-    {
-        code: 'Barcode 3',
-        time: new Date().getTime(),
-    },
 ];
 
 const defaultStore = {
