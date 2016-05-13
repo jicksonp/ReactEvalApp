@@ -8,6 +8,7 @@ import {
 
 import store from './ReactEvalStore';
 import BarcodeList from './BarcodeList.js';
+import BarcodeScanner from './BarcodeScanner';
 
 class ReactTodo extends Component {
     constructor(props, context) {
@@ -38,10 +39,17 @@ class ReactTodo extends Component {
 
     onScanQrCodePressed() {
         console.log('onScanQrCodePressed');
+        this.nav.push({
+            name: 'qrscanner',
+        });
     }
 
     renderScene(route, navigator) {
         switch (route.name) {
+        case 'qrscanner':
+            return (
+                <BarcodeScanner/>
+            );
         default:
             return (
                 <BarcodeList
