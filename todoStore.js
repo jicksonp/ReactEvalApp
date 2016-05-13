@@ -4,6 +4,12 @@ const defaultBarCodes = [
     {
         code: 'Barcode 1',
     },
+    {
+        code: 'Barcode 2',
+    },
+    {
+        code: 'Barcode 3',
+    },
 ];
 
 const defaultStore = {

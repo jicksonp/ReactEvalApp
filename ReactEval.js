@@ -36,11 +36,18 @@ class ReactTodo extends Component {
         return status;
     }
 
+    onScanQrCodePressed() {
+        console.log('onScanQrCodePressed');
+    }
+
     renderScene(route, navigator) {
         switch (route.name) {
         default:
             return (
-                <BarcodeList/>
+                <BarcodeList
+                    barcodes={this.state.barcodes}
+                    onScanQrCodePressed={this.onScanQrCodePressed.bind(this)}
+                />
             );
         }
     }
