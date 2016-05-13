@@ -13,7 +13,6 @@ import BarcodeRow from './BarcodeRow/Component';
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 40,
         backgroundColor: '#F7F7F7',
         flex: 1,
         justifyContent: 'flex-start',
