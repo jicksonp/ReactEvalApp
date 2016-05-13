@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     },
     barcode_time_container: {
         flex: 1,
+        marginTop: 8,
         flexDirection: 'row',
         alignItems: 'flex-end',
         justifyContent: 'flex-end',
