@@ -6,7 +6,6 @@ import {
 
 import BarcodeScanner from 'react-native-barcodescanner';
 
-
 class BarcodeScannerScreen extends Component {
 
     constructor(props, context) {

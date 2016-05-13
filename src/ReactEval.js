@@ -6,9 +6,9 @@ import {
   BackAndroid,
 } from 'react-native';
 
-import store from './ReactEvalStore';
-import BarcodeList from './BarcodeList.js';
-import BarcodeScannerScreen from './BarcodeScanner';
+import store from './store/ReactEvalStore';
+import BarcodeList from './barcodelist/BarcodeList.js';
+import BarcodeScannerScreen from './barcodescanner/BarcodeScanner';
 
 class ReactTodo extends Component {
     constructor(props, context) {

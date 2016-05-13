@@ -2,5 +2,5 @@ import {
   AppRegistry,
 } from 'react-native';
 
-const reactEval = require('./ReactEval');
+const reactEval = require('./src/ReactEval');
 AppRegistry.registerComponent('ReactEvalApp', () => reactEval);
