@@ -2,40 +2,35 @@ import React from 'react';
 
 import {
   Component,
-  StyleSheet,
-  Text,
-  View,
 } from 'react-native';
 
-const styles = StyleSheet.create({
-    container: {
-        backgroundColor: '#fff',
-        borderWidth: 1,
-        borderColor: '#E7E7E7',
-        padding: 20,
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginBottom: 20,
-        marginLeft: 20,
-        marginRight: 20,
-    },
-    label: {
-        fontSize: 20,
-        fontWeight: '300',
-    },
-});
+import BarcodeScanner from 'react-native-barcodescanner';
 
-class BarcodeScanner extends Component {
+class BarcodeScannerScreen extends Component {
+    constructor(props, context) {
+        super(props, context);
+
+        this.state = {
+            torchMode: 'off',
+            cameraType: 'back',
+        };
+    }
+
+    barcodeReceived(e) {
+        console.log('Barcode: ' + e.data);
+        console.log('Type: ' + e.type);
+    }
+
     render() {
         return (
-            <View>
-                <Text>
-                    Hello scanner
-                </Text>
-            </View>
+          <BarcodeScanner
+              cameraType={this.state.cameraType}
+              onBarCodeRead={this.barcodeReceived}
+              style={{ flex: 1 }}
+              torchMode={this.state.torchMode}
+          />
         );
     }
 }
 
-export default BarcodeScanner;
+export default BarcodeScannerScreen;
