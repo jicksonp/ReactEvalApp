@@ -10,12 +10,15 @@ import {
 import { toDateString } from '../utils/Utils';
 import RColors from '../utils/RColors';
 
+import {
+  getTheme,
+} from 'react-native-material-kit';
+
+const theme = getTheme();
+
 const styles = StyleSheet.create({
     container: {
         backgroundColor: RColors.background,
-        borderWidth: 1,
-        borderColor: '#E7E7E7',
-        borderRadius: 2,
         padding: 8,
         flex: 1,
         flexDirection: 'column',
@@ -44,7 +47,7 @@ const styles = StyleSheet.create({
 class BarcodeRow extends Component {
     render() {
         return (
-            <View style={styles.container}>
+            <View style={[styles.container, theme.cardStyle]}>
                 <Text style={styles.barcode_label}>
                     {this.props.barcode.code}
                 </Text>

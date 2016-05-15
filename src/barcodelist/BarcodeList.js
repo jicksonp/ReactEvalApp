@@ -15,7 +15,7 @@ import BarcodeRow from './BarcodeRow';
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: RColors.background,
+        backgroundColor: RColors.lightPrimary,
         flex: 1,
         justifyContent: 'flex-start',
     },
