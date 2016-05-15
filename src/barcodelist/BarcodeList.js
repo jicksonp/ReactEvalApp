@@ -10,24 +10,26 @@ import {
   StatusBar,
 } from 'react-native';
 
+import RColors from '../utils/RColors';
+
 import BarcodeRow from './BarcodeRow';
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#F7F7F7',
+        backgroundColor: RColors.background,
         flex: 1,
         justifyContent: 'flex-start',
     },
     button: {
         height: 60,
         borderRadius: 2,
-        backgroundColor: '#607D8B',
+        backgroundColor: RColors.primary,
         margin: 16,
         justifyContent: 'center',
         alignItems: 'center',
     },
     buttonText: {
-        color: '#FAFAFA',
+        color: RColors.textIcon,
         fontSize: 20,
         fontWeight: '600',
     },
