@@ -11,7 +11,6 @@ import {
 } from 'react-native';
 
 import RColors from '../utils/RColors';
-
 import BarcodeRow from './BarcodeRow';
 
 const styles = StyleSheet.create({
