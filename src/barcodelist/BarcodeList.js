@@ -5,7 +5,7 @@ import {
   View,
   StyleSheet,
   Text,
-  TouchableHighlight,
+  TouchableNativeFeedback,
   ListView,
 } from 'react-native';
 
@@ -67,14 +67,15 @@ class BarcodeList extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <TouchableHighlight
+                <TouchableNativeFeedback
                     onPress={this.props.onScanQrCodePressed}
-                    style={styles.button}
                 >
-                    <Text style={styles.buttonText}>
-                        Scan QR Code
-                    </Text>
-                </TouchableHighlight>
+                    <View style={styles.button}>
+                        <Text style={styles.buttonText}>
+                            Scan QR Code
+                        </Text>
+                    </View>
+                </TouchableNativeFeedback>
                 <ListView
                     dataSource={this.state.dataSource}
                     renderRow={this.renderRow.bind(this)}
