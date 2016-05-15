@@ -7,6 +7,7 @@ import {
   Text,
   TouchableNativeFeedback,
   ListView,
+  StatusBar,
 } from 'react-native';
 
 import BarcodeRow from './BarcodeRow';
@@ -19,10 +20,8 @@ const styles = StyleSheet.create({
     },
     button: {
         height: 60,
-        borderColor: '#05A5D1',
         borderRadius: 2,
-        borderWidth: 2,
-        backgroundColor: '#333',
+        backgroundColor: '#607D8B',
         margin: 16,
         justifyContent: 'center',
         alignItems: 'center',
@@ -67,6 +66,10 @@ class BarcodeList extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <StatusBar
+                    backgroundColor="#455A64"
+                    barStyle="light-content"
+                />
                 <TouchableNativeFeedback
                     onPress={this.props.onScanQrCodePressed}
                 >
