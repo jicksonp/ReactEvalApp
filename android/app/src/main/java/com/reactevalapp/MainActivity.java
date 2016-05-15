@@ -5,7 +5,6 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 
 import com.eguma.barcodescanner.BarcodeScanner;
-import com.github.xinthink.rnmk.ReactMaterialKitPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -38,8 +37,7 @@ public class MainActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
-            new BarcodeScanner(),
-            new ReactMaterialKitPackage() 
+            new BarcodeScanner()
         );
     }
 }
