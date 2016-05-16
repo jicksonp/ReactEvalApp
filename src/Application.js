@@ -129,4 +129,11 @@ const styles = {
 	}
 };
 
+global.LOG = (...args) => {
+    console.log('/------------------------------\\');
+    console.log(...args);
+    console.log('\\------------------------------/');
+    return args[args.length - 1];
+};
+
 module.exports = Application;
