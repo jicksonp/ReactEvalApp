@@ -15,17 +15,12 @@ export default {
 
     github: {
         title: 'Github API',
-        component: require('./scenes/Avatars').default,
-    },
-
-    github: {
-        title: 'Github API',
-        component: require('./scenes/Avatars').default,
+        component: require('./barcodescanner/BarcodeScanner').default,
     },
 
     logout: {
         title: 'Github API',
-        component: require('./scenes/Avatars').default,
+        component: require('./barcodescanner/BarcodeScanner').default,
     },
 
 };
