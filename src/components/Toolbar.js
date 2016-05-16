@@ -16,16 +16,9 @@ export default class Toolbar extends Component {
         super(props);
         this.state = {
             title: AppStore.getState().routeName,
-            theme: AppStore.getState().theme,
-            counter: 0
+            theme: AppStore.getState().theme
         };
     }
-
-    increment = () => {
-        this.setState({
-            counter: this.state.counter + 1
-        });
-    };
 
     componentDidMount = () => {
         AppStore.listen(this.handleAppStore);
@@ -44,7 +37,7 @@ export default class Toolbar extends Component {
 
     render() {
         const { navigator } = this.context;
-        const { theme, counter } = this.state;
+        const { theme } = this.state;
         const { onIconPress } = this.props;
 
         return (
@@ -53,11 +46,6 @@ export default class Toolbar extends Component {
                 primary={theme}
                 icon={navigator && navigator.isChild ? 'keyboard-backspace' : 'menu'}
                 onIconPress={() => navigator && navigator.isChild ? navigator.back() : onIconPress()}
-                actions={[{
-                    icon: 'warning',
-                    badge: { value: counter, animate: true },
-                    onPress: this.increment
-                }]}
                 rightIconStyle={{
                     margin: 10
                 }}
