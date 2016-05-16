@@ -1,6 +1,7 @@
 import React, { Component, PropTypes, View, Text, Image } from 'react-native';
 
 import { Avatar, Drawer, Divider, COLOR, TYPO } from 'react-native-material-design';
+import * as GLOBAL from '../utils/Globals';
 
 export default class Navigation extends Component {
 
@@ -31,7 +32,7 @@ export default class Navigation extends Component {
 
         return (
             <Drawer theme='light'>
-                <Drawer.Header >
+                <Drawer.Header backgroundColor={GLOBAL.COLOR.PRIMARY}>
                     <View style={styles.header}>
                         <Avatar size={80} image={<Image source={{ uri: "http://facebook.github.io/react-native/img/opengraph.png?2" }}/>} />
                         <Text style={[styles.text, COLOR.paperGrey50, TYPO.paperFontSubhead]}>React Native Sample Application</Text>
