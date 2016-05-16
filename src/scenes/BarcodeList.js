@@ -13,7 +13,6 @@ import {
 
 import RColors from '../utils/RColors';
 import BarcodeRow from './BarcodeRow';
-import store from '../stores/ReactEvalStore';
 
 const styles = StyleSheet.create({
     container: {
@@ -44,20 +43,10 @@ class BarcodeList extends Component {
             rowHasChanged: (r1, r2) => r1 !== r2,
         });
 
-        // TODO change this logic
-        const barcodes = [];
-        for (let i = 0; i < 100; i++) {
-            barcodes.push(
-                {
-                    code: 'Barcode 1',
-                    time: new Date().getTime(),
-                }
-            );
-        }
-
         this.state = {
-            dataSource: ds.cloneWithRows(barcodes),
+            dataSource: ds.cloneWithRows(props.barcodes),
         };
+
     }
 
     componentWillReceiveProps(nextProps) {
@@ -103,9 +92,7 @@ class BarcodeList extends Component {
                     barStyle="light-content"
                 />
                 <TouchableNativeFeedback
-                    onPress={() => {navigator.forward('scanqrcode','Scan QR Code',{
-                        onQrCodeRead: onQrCodeRead,
-                    })}}
+                    onPress={this.props.onScanQrCodePressed}
                 >
                     <View style={styles.button}>
                         <Text style={styles.buttonText}>

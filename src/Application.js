@@ -3,6 +3,7 @@ import React, { AppRegistry, Component, Navigator, DrawerLayoutAndroid, ScrollVi
 import Navigate from './utils/Navigate';
 import { Toolbar } from './components';
 import Navigation from './scenes/Navigation';
+import store from './stores/ReactEvalStore';
 
 class Application extends Component {
 
@@ -13,10 +14,13 @@ class Application extends Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {
-			drawer: null,
-			navigator: null
-		};
+
+		this.state = store.getState();
+        store.subscribe(() => {
+            // Below comment is used to remove the lint warning.
+            // Do this only when you are sure that you are calling set state using redux store.
+            this.setState(store.getState()); // eslint-disable-line react/no-set-state
+        });
 	}
 
 	getChildContext = () => {
@@ -38,14 +42,28 @@ class Application extends Component {
 		});
 	};
 
+
     onQrCodeRead(qrcode) {
         console.log('QRCODE IS:', qrcode);
-        this.nav.pop();
-        store.dispatch({
-            type: 'ADD_QR_CODE',
-            qrcode,
-        });
+		console.log('QRCODE IS navigator:', state);
+		//TODO not working
+        this.state.navigator.back();
+        // store.dispatch({
+        //     type: 'ADD_QR_CODE',
+        //     qrcode,
+        // });
     }
+
+	onScanQrCodePressed() {
+        console.log('onScanQrCodePressed');
+        // this.nav.push({
+        //     name: 'qrscanner',
+        // });
+		this.state.navigator.forward('scanqrcode','Scan QR Code',{
+			onQrCodeRead: this.onQrCodeRead,
+		});
+    }
+
 
 	render() {
 		const { drawer, navigator } = this.state;
@@ -77,7 +95,14 @@ class Application extends Component {
                                 <View
                                     style={styles.scene}
                                     showsVerticalScrollIndicator={false}>
-                                	<route.component title={route.title} path={route.path} {...route.props} />
+                                	<route.component
+										title={route.title}
+										path={route.path}
+										barcodes={this.state.barcodes}
+					                    onScanQrCodePressed={this.onScanQrCodePressed.bind(this)}
+										onQrCodeRead={this.onQrCodeRead.bind(this)}
+										{...route.props}
+									/>
                                 </View>
                             );
                         }

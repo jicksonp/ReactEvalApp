@@ -9,6 +9,8 @@ const defaultBarCodes = [
 
 const defaultStore = {
     barcodes: defaultBarCodes,
+    drawer: null,
+    navigator: null,
 };
 
 function todoStore(state = defaultStore, action) {
