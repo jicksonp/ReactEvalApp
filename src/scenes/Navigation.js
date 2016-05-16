@@ -53,13 +53,13 @@ export default class Navigation extends Component {
                         onPress: () => this.changeScene('github'),
                         onLongPress: () => this.changeScene('github')
                     },
-                    {
-                        icon: 'home',
-                        value: 'Logout',
-                        active: !route || route === 'logout',
-                        onPress: () => this.changeScene('logout'),
-                        onLongPress: () => this.changeScene('logout')
-                    },
+                    // {
+                    //     icon: 'home',
+                    //     value: 'Logout',
+                    //     active: !route || route === 'logout',
+                    //     onPress: () => this.changeScene('logout'),
+                    //     onLongPress: () => this.changeScene('logout')
+                    // },
                     ]}
                 />
 

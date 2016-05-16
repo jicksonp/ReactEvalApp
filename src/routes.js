@@ -3,24 +3,24 @@ export default {
     qrcodelist: {
         initialRoute: true,
         title: 'QR Code Scanner',
-        component: require('./barcodelist/BarcodeList').default,
+        component: require('./scenes/BarcodeList').default,
 
         children: {
             example: {
                 title: 'Scan QR Code',
-                component: require('./barcodescanner/BarcodeScanner').default,
+                component: require('./scenes/BarcodeScanner').default,
             },
         },
     },
 
     github: {
-        title: 'Github API',
-        component: require('./barcodescanner/BarcodeScanner').default,
+        title: 'Github Api',
+        component: require('./scenes/GithubApis').default,
     },
 
     logout: {
-        title: 'Github API',
-        component: require('./barcodescanner/BarcodeScanner').default,
+        title: 'Logout',
+        component: require('./scenes/GithubApis').default,
     },
 
 };
