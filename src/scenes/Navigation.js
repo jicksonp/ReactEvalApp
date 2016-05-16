@@ -1,6 +1,21 @@
-import React, { Component, PropTypes, View, Text, Image } from 'react-native';
+import React from 'react';
 
-import { Avatar, Drawer, Divider, COLOR, TYPO } from 'react-native-material-design';
+import {
+    Component,
+    PropTypes,
+    View,
+    Text,
+    Image,
+} from 'react-native';
+
+import {
+    Avatar,
+    Drawer,
+    Divider,
+    COLOR,
+    TYPO
+} from 'react-native-material-design';
+
 import * as GLOBAL from '../utils/Globals';
 
 export default class Navigation extends Component {
