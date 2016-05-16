@@ -45,23 +45,18 @@ class Application extends Component {
 
     onQrCodeRead(qrcode) {
         console.log('QRCODE IS:', qrcode);
-		console.log('QRCODE IS navigator:', state);
+		//console.log('QRCODE IS navigator:', state);
 		//TODO not working
         this.state.navigator.back();
-        // store.dispatch({
-        //     type: 'ADD_QR_CODE',
-        //     qrcode,
-        // });
+        store.dispatch({
+            type: 'ADD_QR_CODE',
+            qrcode,
+        });
     }
 
 	onScanQrCodePressed() {
         console.log('onScanQrCodePressed');
-        // this.nav.push({
-        //     name: 'qrscanner',
-        // });
-		this.state.navigator.forward('scanqrcode','Scan QR Code',{
-			onQrCodeRead: this.onQrCodeRead,
-		});
+		this.state.navigator.forward('scanqrcode','Scan QR Code');
     }
 
 

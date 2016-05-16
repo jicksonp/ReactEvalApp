@@ -17,6 +17,7 @@ function todoStore(state = defaultStore, action) {
     switch (action.type) {
     case 'ADD_QR_CODE':
         // Copy the element in front of array.
+        console.log('State update called', action);
         const newArray = [{
             code: action.qrcode,
             time: new Date().getTime(),

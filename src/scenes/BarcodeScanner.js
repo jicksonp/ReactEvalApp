@@ -26,6 +26,7 @@ class BarcodeScannerScreen extends Component {
                 console.log('Barcode: ' + e.data);
                 console.log('Type: ' + e.type);
                 this.props.onQrCodeRead(e.data);
+                //this.props.onScanQrCodePressed
             }
         };
     })();
