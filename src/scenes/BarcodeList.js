@@ -8,6 +8,7 @@ import {
   TouchableNativeFeedback,
   ListView,
   StatusBar,
+  PropTypes,
 } from 'react-native';
 
 import RColors from '../utils/RColors';
@@ -35,6 +36,7 @@ const styles = StyleSheet.create({
 });
 
 class BarcodeList extends Component {
+
     constructor(props, context) {
         super(props, context);
         const ds = new ListView.DataSource({
@@ -75,7 +77,12 @@ class BarcodeList extends Component {
         );
     }
 
+    static contextTypes = {
+        navigator: PropTypes.object.isRequired
+    };
+
     render() {
+        const { navigator } = this.context;
         return (
             <View style={styles.container}>
                 <StatusBar
@@ -83,7 +90,7 @@ class BarcodeList extends Component {
                     barStyle="light-content"
                 />
                 <TouchableNativeFeedback
-                    onPress={this.props.onScanQrCodePressed}
+                    onPress={() => {navigator.forward()}}
                 >
                     <View style={styles.button}>
                         <Text style={styles.buttonText}>
