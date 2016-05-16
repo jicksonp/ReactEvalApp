@@ -36,7 +36,7 @@ export default class Toolbar extends Component {
             <MaterialToolbar
                 title={navigator && navigator.currentRoute ? navigator.currentRoute.title : 'Welcome'}
                 primary={GLOBAL.COLOR.LIBRARY_PRIMARY}
-                icon={navigator && navigator.isChild ? 'keyboard-backspace' : 'menu'}
+                icon={navigator && navigator.isChild ? 'arrow-back' : 'menu'}
                 onIconPress={() => navigator && navigator.isChild ? navigator.back() : onIconPress()}
                 rightIconStyle={{
                     margin: 10
