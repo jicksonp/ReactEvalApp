@@ -13,6 +13,7 @@
     "react": "^0.14.8",
     "react-native": "^0.25.1",
     "react-native-barcodescanner": "^1.0.1",
+    "react-native-material-design": "^0.3.5",
     "redux": "^3.3.1"
   }
 }
