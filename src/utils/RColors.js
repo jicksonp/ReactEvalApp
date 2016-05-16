@@ -3,7 +3,7 @@ module.exports = {
     primary: '#607D8B',
     lightPrimary: '#CFD8DC',
     textIcon: '#FFFFFF',
-    accent: '#7C4DFF',
+    accent: '#FF5252',
     primaryText: '#212121',
     secondaryText: '#727272',
     divider: '#B6B6B6',
