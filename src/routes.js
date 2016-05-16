@@ -6,7 +6,7 @@ export default {
         component: require('./scenes/BarcodeList').default,
 
         children: {
-            example: {
+            scanqrcode: {
                 title: 'Scan QR Code',
                 component: require('./scenes/BarcodeScanner').default,
             },

@@ -13,6 +13,7 @@ import {
 
 import RColors from '../utils/RColors';
 import BarcodeRow from './BarcodeRow';
+import store from '../stores/ReactEvalStore';
 
 const styles = StyleSheet.create({
     container: {
@@ -81,8 +82,20 @@ class BarcodeList extends Component {
         navigator: PropTypes.object.isRequired
     };
 
+
+
     render() {
         const { navigator } = this.context;
+
+        function onQrCodeRead(qrcode) {
+            console.log('QRCODE IS:', qrcode);
+            navigator.back();
+            store.dispatch({
+                type: 'ADD_QR_CODE',
+                qrcode,
+            });
+        }
+
         return (
             <View style={styles.container}>
                 <StatusBar
@@ -90,7 +103,9 @@ class BarcodeList extends Component {
                     barStyle="light-content"
                 />
                 <TouchableNativeFeedback
-                    onPress={() => {navigator.forward()}}
+                    onPress={() => {navigator.forward('scanqrcode','Scan QR Code',{
+                        onQrCodeRead: onQrCodeRead,
+                    })}}
                 >
                     <View style={styles.button}>
                         <Text style={styles.buttonText}>
