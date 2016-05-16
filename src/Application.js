@@ -14,12 +14,17 @@ class Application extends Component {
 
 	constructor(props) {
 		super(props);
-
-		this.state = store.getState();
+		this.state = {
+			drawer: null,
+			navigator: null,
+			barcodes: store.getState().barcodes,
+		};
         store.subscribe(() => {
             // Below comment is used to remove the lint warning.
             // Do this only when you are sure that you are calling set state using redux store.
-            this.setState(store.getState()); // eslint-disable-line react/no-set-state
+            this.setState({
+				barcodes: store.getState().barcodes,
+			}); // eslint-disable-line react/no-set-state
         });
 	}
 
@@ -44,9 +49,6 @@ class Application extends Component {
 
 
     onQrCodeRead(qrcode) {
-        console.log('QRCODE IS:', qrcode);
-		//console.log('QRCODE IS navigator:', state);
-		//TODO not working
         this.state.navigator.back();
         store.dispatch({
             type: 'ADD_QR_CODE',
@@ -56,7 +58,7 @@ class Application extends Component {
 
 	onScanQrCodePressed() {
         console.log('onScanQrCodePressed');
-		this.state.navigator.forward('scanqrcode','Scan QR Code');
+		this.state.navigator.forward();
     }
 
 
