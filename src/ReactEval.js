@@ -89,10 +89,6 @@ class ReactTodo extends Component {
     }
 }
 
-function setup() {
-    return ReactTodo;
-}
-
 global.LOG = (...args) => {
     console.log('/------------------------------\\');
     console.log(...args);
@@ -100,4 +96,4 @@ global.LOG = (...args) => {
     return args[args.length - 1];
 };
 
-module.exports = setup;
+module.exports = ReactTodo;
