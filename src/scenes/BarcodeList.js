@@ -11,6 +11,8 @@ import {
   PropTypes,
 } from 'react-native';
 
+import ActionButton from 'react-native-action-button';
+
 import * as GLOBAL from '../utils/Globals';
 import BarcodeRow from './BarcodeRow';
 
@@ -19,19 +21,7 @@ const styles = StyleSheet.create({
         backgroundColor: GLOBAL.COLOR.BACKGROUND,
         flex: 1,
         justifyContent: 'flex-start',
-    },
-    button: {
-        height: 60,
-        borderRadius: 2,
-        backgroundColor: GLOBAL.COLOR.PRIMARY,
-        margin: 16,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    buttonText: {
-        color: GLOBAL.COLOR.TEXT_ICON,
-        fontSize: 20,
-        fontWeight: '600',
+        paddingTop: 16,
     },
 });
 
@@ -91,18 +81,13 @@ class BarcodeList extends Component {
                     backgroundColor={GLOBAL.COLOR.DARK_PRIMARY}
                     barStyle="light-content"
                 />
-                <TouchableNativeFeedback
-                    onPress={this.props.onScanQrCodePressed}
-                >
-                    <View style={styles.button}>
-                        <Text style={styles.buttonText}>
-                            Scan QR Code
-                        </Text>
-                    </View>
-                </TouchableNativeFeedback>
                 <ListView
                     dataSource={this.state.dataSource}
                     renderRow={this.renderRow.bind(this)}
+                />
+                <ActionButton
+                    buttonColor="rgba(231,76,60,1)"
+                    onPress={this.props.onScanQrCodePressed}
                 />
             </View>
         );
