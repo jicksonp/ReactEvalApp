@@ -49,7 +49,7 @@ export default class Navigation extends Component {
             <Drawer theme='light'>
                 <Drawer.Header backgroundColor={GLOBAL.COLOR.PRIMARY}>
                     <View style={styles.header}>
-                        <Avatar size={80} image={<Image source={{ uri: "http://facebook.github.io/react-native/img/opengraph.png?2" }}/>} />
+                        <Avatar size={80} image={<Image source={require('../img/nuvo_logo.png')}/>} />
                         <Text style={[styles.text, COLOR.paperGrey50, TYPO.paperFontSubhead]}>React Native Sample Application</Text>
                     </View>
                 </Drawer.Header>
