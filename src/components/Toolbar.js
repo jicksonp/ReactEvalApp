@@ -34,7 +34,7 @@ export default class Toolbar extends Component {
 
         return (
             <MaterialToolbar
-                title={navigator && navigator.currentRoute ? navigator.currentRoute.title : 'Welcome'}
+                title={navigator && navigator.currentRoute ? navigator.currentRoute.title : GLOBAL.SCREEN_TITLE.QR_CODE_SCANNER }
                 primary={GLOBAL.COLOR.LIBRARY_PRIMARY}
                 icon={navigator && navigator.isChild ? 'arrow-back' : 'menu'}
                 onIconPress={() => navigator && navigator.isChild ? navigator.back() : onIconPress()}
