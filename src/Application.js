@@ -1,4 +1,4 @@
-import React, { AppRegistry, Component, Navigator, DrawerLayoutAndroid, ScrollView, View, Text } from 'react-native';
+import React, { AppRegistry, Component, Navigator, DrawerLayoutAndroid, ScrollView, View, Text, Dimensions } from 'react-native';
 
 import Navigate from './utils/Navigate';
 import { Toolbar } from './components';
@@ -65,10 +65,11 @@ class Application extends Component {
 	render() {
 		const { drawer, navigator } = this.state;
 		const navView = React.createElement(Navigation);
-
+		var {height, width} = Dimensions.get('window');
+		const drawerWidth = Math.floor(width * 0.85);
 		return (
 			<DrawerLayoutAndroid
-				drawerWidth={300}
+				drawerWidth={drawerWidth}
 				drawerPosition={DrawerLayoutAndroid.positions.Left}
 				renderNavigationView={() => {
                     if (drawer && navigator) {
