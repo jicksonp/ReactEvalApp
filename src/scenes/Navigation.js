@@ -42,23 +42,23 @@ export default class Navigation extends Component {
                     items={[{
                         icon: 'home',
                         value: 'QR Code Scanner',
-                        active: !route || route === 'welcome',
-                        onPress: () => this.changeScene('welcome'),
-                        onLongPress: () => this.changeScene('welcome')
+                        active: !route || route === 'qrcodelist',
+                        onPress: () => this.changeScene('qrcodelist'),
+                        onLongPress: () => this.changeScene('qrcodelist')
                     },
                     {
                         icon: 'home',
                         value: 'Github API',
-                        active: !route || route === 'welcome',
-                        onPress: () => this.changeScene('welcome'),
-                        onLongPress: () => this.changeScene('welcome')
+                        active: !route || route === 'github',
+                        onPress: () => this.changeScene('github'),
+                        onLongPress: () => this.changeScene('github')
                     },
                     {
                         icon: 'home',
                         value: 'Logout',
-                        active: !route || route === 'welcome',
-                        onPress: () => this.changeScene('welcome'),
-                        onLongPress: () => this.changeScene('welcome')
+                        active: !route || route === 'logout',
+                        onPress: () => this.changeScene('logout'),
+                        onLongPress: () => this.changeScene('logout')
                     },
                     ]}
                 />

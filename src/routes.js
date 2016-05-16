@@ -1,64 +1,31 @@
 export default {
 
-    welcome: {
+    qrcodelist: {
         initialRoute: true,
-
-        title: 'Welcome',
-        component: require('./scenes/Welcome').default,
+        title: 'QR Code Scanner',
+        component: require('./barcodelist/BarcodeList').default,
 
         children: {
             example: {
-                // title: 'Child Example', // optional
-                component: require('./scenes/NestedExample').default
-            }
-        }
+                title: 'Scan QR Code',
+                component: require('./barcodescanner/BarcodeScanner').default,
+            },
+        },
     },
 
-    avatars: {
-        title: 'Avatars',
-        component: require('./scenes/Avatars').default
+    github: {
+        title: 'Github API',
+        component: require('./scenes/Avatars').default,
     },
 
-    buttons: {
-
-        title: 'Buttons',
-        component: require('./scenes/Buttons').default
+    github: {
+        title: 'Github API',
+        component: require('./scenes/Avatars').default,
     },
 
-    checkboxes: {
-        title: 'Checkboxes',
-        component: require('./scenes/Checkboxes').default
+    logout: {
+        title: 'Github API',
+        component: require('./scenes/Avatars').default,
     },
 
-    dividers: {
-        title: 'Dividers',
-        component: require('./scenes/Dividers').default
-    },
-
-    list: {
-
-        title: 'List',
-        component: require('./scenes/List').default
-    },
-
-    'icon-toggles': {
-        title: 'Icon Toggles',
-        component: require('./scenes/IconToggles').default
-    },
-
-    'radio-buttons': {
-
-        title: 'Radio Buttons',
-        component: require('./scenes/RadioButtons').default
-    },
-
-    subheaders: {
-        title: 'Subheaders',
-        component: require('./scenes/Subheaders').default
-    },
-
-    themes: {
-        title: 'Change Theme',
-        component: require('./scenes/Themes').default
-    }
-}
+};

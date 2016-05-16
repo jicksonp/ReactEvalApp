@@ -41,8 +41,19 @@ class BarcodeList extends Component {
             rowHasChanged: (r1, r2) => r1 !== r2,
         });
 
+        // TODO change this logic
+        const barcodes = [];
+        for (let i = 0; i < 100; i++) {
+            barcodes.push(
+                {
+                    code: 'Barcode 1',
+                    time: new Date().getTime(),
+                }
+            );
+        }
+
         this.state = {
-            dataSource: ds.cloneWithRows(props.barcodes),
+            dataSource: ds.cloneWithRows(barcodes),
         };
     }
 
