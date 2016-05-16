@@ -1,4 +1,14 @@
-import React, { AppRegistry, Component, Navigator, DrawerLayoutAndroid, ScrollView, View, Text, Dimensions } from 'react-native';
+import React from 'react';
+import {
+	AppRegistry,
+	Component,
+	Navigator,
+	DrawerLayoutAndroid,
+	ScrollView,
+	View,
+	Text,
+	Dimensions,
+} from 'react-native';
 
 import Navigate from './utils/Navigate';
 import { Toolbar } from './components';
