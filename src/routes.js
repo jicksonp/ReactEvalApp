@@ -1,25 +1,26 @@
+import * as GLOBAL from './utils/Globals';
 export default {
 
     qrcodelist: {
         initialRoute: true,
-        title: 'QR Code Scanner',
+        title: GLOBAL.SCREEN_TITLE.QR_CODE_SCANNER,
         component: require('./scenes/BarcodeList').default,
 
         children: {
             scanqrcode: {
-                title: 'Scan QR Code',
+                title: GLOBAL.SCREEN_TITLE.SCAN_QR_CODE,
                 component: require('./scenes/BarcodeScanner').default,
             },
         },
     },
 
     github: {
-        title: 'Github Api',
+        title: GLOBAL.SCREEN_TITLE.GITHUB_API,
         component: require('./scenes/GithubApis').default,
     },
 
     logout: {
-        title: 'Logout',
+        title: GLOBAL.SCREEN_TITLE.LOGOUT,
         component: require('./scenes/GithubApis').default,
     },
 

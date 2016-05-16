@@ -1,6 +1,6 @@
 import React, { Component, PropTypes, Text, View } from 'react-native';
 import { Toolbar as MaterialToolbar } from 'react-native-material-design';
-
+import * as GLOBAL from '../utils/Globals';
 export default class Toolbar extends Component {
 
     static contextTypes = {
@@ -14,8 +14,8 @@ export default class Toolbar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: 'Jickson',
-            theme: 'dark',
+            title: GLOBAL.SCREEN_TITLE.QR_CODE_SCANNER,
+            theme: 'light',
         };
     }
 
@@ -27,7 +27,7 @@ export default class Toolbar extends Component {
         return (
             <MaterialToolbar
                 title={navigator && navigator.currentRoute ? navigator.currentRoute.title : 'Welcome'}
-                primary={theme}
+                primary={GLOBAL.COLOR.LIBRARY_PRIMARY}
                 icon={navigator && navigator.isChild ? 'keyboard-backspace' : 'menu'}
                 onIconPress={() => navigator && navigator.isChild ? navigator.back() : onIconPress()}
                 rightIconStyle={{

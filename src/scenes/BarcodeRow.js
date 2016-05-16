@@ -7,12 +7,12 @@ import {
   View,
 } from 'react-native';
 
+import * as GLOBAL from '../utils/Globals';
 import { toDateString } from '../utils/Utils';
-import RColors from '../utils/RColors';
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: RColors.background,
+        backgroundColor: GLOBAL.COLOR.BACKGROUND,
         borderWidth: 1,
         borderColor: '#E7E7E7',
         borderRadius: 2,

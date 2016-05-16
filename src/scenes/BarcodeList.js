@@ -11,25 +11,25 @@ import {
   PropTypes,
 } from 'react-native';
 
-import RColors from '../utils/RColors';
+import * as GLOBAL from '../utils/Globals';
 import BarcodeRow from './BarcodeRow';
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: RColors.background,
+        backgroundColor: GLOBAL.COLOR.BACKGROUND,
         flex: 1,
         justifyContent: 'flex-start',
     },
     button: {
         height: 60,
         borderRadius: 2,
-        backgroundColor: RColors.primary,
+        backgroundColor: GLOBAL.COLOR.PRIMARY,
         margin: 16,
         justifyContent: 'center',
         alignItems: 'center',
     },
     buttonText: {
-        color: RColors.textIcon,
+        color: GLOBAL.COLOR.TEXT_ICON,
         fontSize: 20,
         fontWeight: '600',
     },
@@ -88,7 +88,7 @@ class BarcodeList extends Component {
         return (
             <View style={styles.container}>
                 <StatusBar
-                    backgroundColor="#455A64"
+                    backgroundColor={GLOBAL.COLOR.DARK_PRIMARY}
                     barStyle="light-content"
                 />
                 <TouchableNativeFeedback
