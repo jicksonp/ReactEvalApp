@@ -84,7 +84,7 @@ class Application extends Component {
 				});
 			});
 			qrcodes.reverse();
-			console.log('Data recieved listenForItems',qrcodes);
+			//console.log('Data recieved listenForItems',qrcodes);
 			store.dispatch({
 				type: 'UPDATE_ALL_QR_CODES',
 				qrcodes,

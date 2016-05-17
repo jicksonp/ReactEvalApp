@@ -17,6 +17,7 @@ import {
 } from 'react-native-material-design';
 
 import * as GLOBAL from '../utils/Globals';
+import Navigate from '../utils/Navigate';
 
 export default class Navigation extends Component {
 
@@ -27,13 +28,16 @@ export default class Navigation extends Component {
 
     constructor(props) {
         super(props);
+        global.LOG('Navigate.getInitialRoute().path',Navigate.getInitialRoute().path);
         this.state = {
-            route: null
+            route: Navigate.getInitialRoute().path,
         }
     }
 
     changeScene = (path, name) => {
         const { drawer, navigator } = this.context;
+
+        global.LOG('change scene',path, ' name',name);
 
         this.setState({
             route: path

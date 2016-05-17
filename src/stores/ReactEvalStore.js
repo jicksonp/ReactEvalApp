@@ -9,7 +9,7 @@ function todoStore(state = defaultStore, action) {
     switch (action.type) {
     case 'ADD_QR_CODE':
         // Copy the element in front of array.
-        console.log('State update called', action);
+        //console.log('State update called', action);
         const newArray = [{
             code: action.qrcode.code,
             time: action.qrcode.time,
@@ -19,7 +19,7 @@ function todoStore(state = defaultStore, action) {
             isLoaded: true,
         });
     case 'UPDATE_ALL_QR_CODES':
-        console.log('State update called UPDATE_ALL_QR_CODES ', action);
+        //console.log('State update called UPDATE_ALL_QR_CODES ', action);
         return Object.assign({}, state, {
             qrcodes: action.qrcodes,
             isLoaded: true,

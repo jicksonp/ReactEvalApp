@@ -49,7 +49,7 @@ class QRcodeList extends Component {
             .dataSource
             .cloneWithRows(nextProps.qrcodes);
 
-        console.log('componentWillReceiveProps ',nextProps);
+        //console.log('componentWillReceiveProps ',nextProps);
 
         // Below comment is used to remove the lint warning.
         // Do this only when you are sure that you are calling set state using redux store.
