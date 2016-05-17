@@ -8,6 +8,7 @@ import {
 	View,
 	Text,
 	Dimensions,
+	StatusBar,
 } from 'react-native';
 
 import Navigate from './utils/Navigate';
@@ -140,6 +141,10 @@ class Application extends Component {
                                 <View
                                     style={styles.scene}
                                     showsVerticalScrollIndicator={false}>
+									<StatusBar
+										backgroundColor={GLOBAL.COLOR.DARK_PRIMARY}
+										barStyle="light-content"
+									/>
                                 	<route.component
 										title={route.title}
 										path={route.path}

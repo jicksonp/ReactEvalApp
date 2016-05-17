@@ -7,7 +7,6 @@ import {
   Text,
   TouchableNativeFeedback,
   ListView,
-  StatusBar,
   PropTypes,
   ProgressBarAndroid as ProgressBar,
 } from 'react-native';
@@ -77,10 +76,6 @@ class BarcodeList extends Component {
         if(this.state.isLoaded){
             return (
                 <View style={styles.container}>
-                    <StatusBar
-                        backgroundColor={GLOBAL.COLOR.DARK_PRIMARY}
-                        barStyle="light-content"
-                    />
                     <ListView
                         dataSource={this.state.dataSource}
                         renderRow={this.renderRow.bind(this)}
@@ -95,10 +90,6 @@ class BarcodeList extends Component {
             //TODO Show loading...
             return(
                 <View style={styles.container}>
-                    <StatusBar
-                        backgroundColor={GLOBAL.COLOR.DARK_PRIMARY}
-                        barStyle="light-content"
-                    />
                     <ProgressBar />
                 </View>
             );
