@@ -32,13 +32,13 @@ class Application extends Component {
 		this.state = {
 			drawer: null,
 			navigator: null,
-			barcodes: store.getState().barcodes,
+			qrcodes: store.getState().qrcodes,
 		};
         store.subscribe(() => {
             // Below comment is used to remove the lint warning.
             // Do this only when you are sure that you are calling set state using redux store.
             this.setState({
-				barcodes: store.getState().barcodes,
+				qrcodes: store.getState().qrcodes,
 				isLoaded: store.getState().isLoaded,
 			}); // eslint-disable-line react/no-set-state
         });
@@ -148,7 +148,7 @@ class Application extends Component {
                                 	<route.component
 										title={route.title}
 										path={route.path}
-										barcodes={this.state.barcodes}
+										qrcodes={this.state.qrcodes}
 										isLoaded={this.state.isLoaded}
 					                    onScanQrCodePressed={this.onScanQrCodePressed.bind(this)}
 										onQrCodeRead={this.onQrCodeRead.bind(this)}

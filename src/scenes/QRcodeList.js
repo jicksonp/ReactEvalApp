@@ -37,7 +37,7 @@ class QRcodeList extends Component {
         });
 
         this.state = {
-            dataSource: ds.cloneWithRows(props.barcodes),
+            dataSource: ds.cloneWithRows(props.qrcodes),
             isLoaded: props.isLoaded,
         };
 
@@ -47,7 +47,7 @@ class QRcodeList extends Component {
         const dataSource = this
             .state
             .dataSource
-            .cloneWithRows(nextProps.barcodes);
+            .cloneWithRows(nextProps.qrcodes);
 
         console.log('componentWillReceiveProps ',nextProps);
 
@@ -59,10 +59,10 @@ class QRcodeList extends Component {
         }); // eslint-disable-line react/no-set-state
     }
 
-    renderRow(barcode) {
+    renderRow(qrcode) {
         return (
             <QRcodeRow
-                barcode={barcode}
+                qrcode={qrcode}
             />
         );
     }
@@ -101,7 +101,7 @@ class QRcodeList extends Component {
 }
 
 QRcodeList.propTypes = {
-    barcodes: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
+    qrcodes: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
     onScanQrCodePressed: React.PropTypes.func.isRequired,
 };
 export default QRcodeList;

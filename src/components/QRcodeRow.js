@@ -46,11 +46,11 @@ class QRcodeRow extends Component {
         return (
             <View style={styles.container}>
                 <Text style={styles.qrcode_label}>
-                    {this.props.barcode.code}
+                    {this.props.qrcode.code}
                 </Text>
                 <View style={styles.qrcode_time_container}>
                     <Text style={styles.qrcode_time}>
-                        {toDateString(this.props.barcode.time)}
+                        {toDateString(this.props.qrcode.time)}
                     </Text>
                 </View>
             </View>
@@ -59,7 +59,7 @@ class QRcodeRow extends Component {
 }
 
 QRcodeRow.propTypes = {
-    barcode: React.PropTypes.shape({
+    qrcode: React.PropTypes.shape({
         code: React.PropTypes.string.isRequired,
         time: React.PropTypes.number.isRequired,
     }).isRequired,

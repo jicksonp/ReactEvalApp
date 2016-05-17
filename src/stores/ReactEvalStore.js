@@ -1,14 +1,7 @@
 import { createStore } from 'redux';
 
-const defaultBarCodes = [
-    {
-        code: 'Barcode 1',
-        time: new Date().getTime(),
-    },
-];
-
 const defaultStore = {
-    barcodes: defaultBarCodes,
+    qrcodes: [],
     isLoaded: false,
 };
 
@@ -22,13 +15,13 @@ function todoStore(state = defaultStore, action) {
             time: action.qrcode.time,
         }];
         return Object.assign({}, state, {
-            barcodes: newArray.concat(state.barcodes),
+            qrcodes: newArray.concat(state.qrcodes),
             isLoaded: true,
         });
     case 'UPDATE_ALL_QR_CODES':
         console.log('State update called UPDATE_ALL_QR_CODES ', action);
         return Object.assign({}, state, {
-            barcodes: action.qrcodes,
+            qrcodes: action.qrcodes,
             isLoaded: true,
         });
     default:

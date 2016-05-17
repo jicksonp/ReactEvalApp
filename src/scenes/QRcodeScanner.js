@@ -23,10 +23,8 @@ class QRcodeScanner extends Component {
         return function (e) {
             if (!executed) {
                 executed = true;
-                console.log('Barcode: ' + e.data);
-                console.log('Type: ' + e.type);
+                console.log('Barcode: ' + e.data,'Type: ' + e.type);
                 this.props.onQrCodeRead(e.data);
-                //this.props.onScanQrCodePressed
             }
         };
     })();
