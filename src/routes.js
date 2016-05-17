@@ -9,7 +9,7 @@ export default {
         children: {
             scanqrcode: {
                 title: GLOBAL.SCREEN_TITLE.SCAN_QR_CODE,
-                component: require('./scenes/BarcodeScanner').default,
+                component: require('./scenes/QRcodeScanner').default,
             },
         },
     },

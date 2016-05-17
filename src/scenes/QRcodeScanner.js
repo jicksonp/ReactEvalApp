@@ -6,7 +6,7 @@ import {
 
 import BarcodeScanner from 'react-native-barcodescanner';
 
-class BarcodeScannerScreen extends Component {
+class QRcodeScanner extends Component {
 
     constructor(props, context) {
         super(props, context);
@@ -44,9 +44,9 @@ class BarcodeScannerScreen extends Component {
 }
 
 
-BarcodeScannerScreen.propTypes = {
+QRcodeScanner.propTypes = {
     onQrCodeRead: React.PropTypes.func.isRequired,
 };
 
 
-export default BarcodeScannerScreen;
+export default QRcodeScanner;
