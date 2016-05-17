@@ -24,11 +24,11 @@ const styles = StyleSheet.create({
         marginLeft: 16,
         marginRight: 16,
     },
-    barcode_label: {
+    qrcode_label: {
         fontSize: 16,
         fontWeight: '400',
     },
-    barcode_time_container: {
+    qrcode_time_container: {
         flex: 1,
         marginTop: 8,
         flexDirection: 'row',
@@ -45,10 +45,10 @@ class BarcodeRow extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.barcode_label}>
+                <Text style={styles.qrcode_label}>
                     {this.props.barcode.code}
                 </Text>
-                <View style={styles.barcode_time_container}>
+                <View style={styles.qrcode_time_container}>
                     <Text style={styles.barcode_time}>
                         {toDateString(this.props.barcode.time)}
                     </Text>

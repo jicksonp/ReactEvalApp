@@ -14,7 +14,7 @@ import {
 import ActionButton from 'react-native-action-button';
 
 import * as GLOBAL from '../utils/Globals';
-import BarcodeRow from '../components/BarcodeRow';
+import QRcodeRow from '../components/QRcodeRow';
 
 const styles = StyleSheet.create({
     container: {
@@ -61,7 +61,7 @@ class BarcodeList extends Component {
 
     renderRow(barcode) {
         return (
-            <BarcodeRow
+            <QRcodeRow
                 barcode={barcode}
             />
         );
