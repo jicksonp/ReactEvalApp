@@ -23,6 +23,9 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         paddingTop: 16,
     },
+    loading:{
+        justifyContent: 'center',
+    }
 });
 
 class BarcodeList extends Component {
@@ -89,7 +92,7 @@ class BarcodeList extends Component {
         }else{
             //TODO Show loading...
             return(
-                <View style={styles.container}>
+                <View style={[styles.container,styles.loading]}>
                     <ProgressBar />
                 </View>
             );
