@@ -4,7 +4,7 @@ export default {
     qrcodelist: {
         initialRoute: true,
         title: GLOBAL.SCREEN_TITLE.QR_CODE_SCANNER,
-        component: require('./scenes/BarcodeList').default,
+        component: require('./scenes/QRcodeList').default,
 
         children: {
             scanqrcode: {

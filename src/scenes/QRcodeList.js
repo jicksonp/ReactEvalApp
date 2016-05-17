@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     }
 });
 
-class BarcodeList extends Component {
+class QRcodeList extends Component {
 
     constructor(props, context) {
         super(props, context);
@@ -100,8 +100,8 @@ class BarcodeList extends Component {
     }
 }
 
-BarcodeList.propTypes = {
+QRcodeList.propTypes = {
     barcodes: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
     onScanQrCodePressed: React.PropTypes.func.isRequired,
 };
-export default BarcodeList;
+export default QRcodeList;
