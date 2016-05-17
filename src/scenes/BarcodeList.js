@@ -14,7 +14,7 @@ import {
 import ActionButton from 'react-native-action-button';
 
 import * as GLOBAL from '../utils/Globals';
-import BarcodeRow from './BarcodeRow';
+import BarcodeRow from '../components/BarcodeRow';
 
 const styles = StyleSheet.create({
     container: {
