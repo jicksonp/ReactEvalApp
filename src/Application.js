@@ -113,8 +113,7 @@ class Application extends Component {
 	render() {
 		const { drawer, navigator } = this.state;
 		const navView = React.createElement(Navigation);
-		var {height, width} = Dimensions.get('window');
-		const drawerWidth = Math.floor(width * 0.85);
+		const drawerWidth = Math.floor(Dimensions.get('window').width * 0.85);
 		return (
 			<DrawerLayoutAndroid
 				drawerWidth={drawerWidth}
