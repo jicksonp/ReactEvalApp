@@ -9,6 +9,7 @@ import {
   ListView,
   StatusBar,
   PropTypes,
+  ProgressBarAndroid as ProgressBar,
 } from 'react-native';
 
 import ActionButton from 'react-native-action-button';
@@ -35,6 +36,7 @@ class BarcodeList extends Component {
 
         this.state = {
             dataSource: ds.cloneWithRows(props.barcodes),
+            isLoaded: props.isLoaded,
         };
 
     }
@@ -46,7 +48,10 @@ class BarcodeList extends Component {
             .cloneWithRows(nextProps.barcodes);
         // Below comment is used to remove the lint warning.
         // Do this only when you are sure that you are calling set state using redux store.
-        this.setState({ dataSource }); // eslint-disable-line react/no-set-state
+        this.setState({
+            dataSource,
+            isLoaded: nextProps.isLoaded,
+        }); // eslint-disable-line react/no-set-state
     }
 
     renderRow(barcode) {
@@ -66,31 +71,35 @@ class BarcodeList extends Component {
     render() {
         const { navigator } = this.context;
 
-        function onQrCodeRead(qrcode) {
-            console.log('QRCODE IS:', qrcode);
-            navigator.back();
-            store.dispatch({
-                type: 'ADD_QR_CODE',
-                qrcode,
-            });
+        if(this.state.isLoaded){
+            return (
+                <View style={styles.container}>
+                    <StatusBar
+                        backgroundColor={GLOBAL.COLOR.DARK_PRIMARY}
+                        barStyle="light-content"
+                    />
+                    <ListView
+                        dataSource={this.state.dataSource}
+                        renderRow={this.renderRow.bind(this)}
+                    />
+                    <ActionButton
+                        buttonColor="rgba(231,76,60,1)"
+                        onPress={this.props.onScanQrCodePressed}
+                    />
+                </View>
+            );
+        }else{
+            //TODO Show loading...
+            return(
+                <View style={styles.container}>
+                    <StatusBar
+                        backgroundColor={GLOBAL.COLOR.DARK_PRIMARY}
+                        barStyle="light-content"
+                    />
+                    <ProgressBar />
+                </View>
+            );
         }
-
-        return (
-            <View style={styles.container}>
-                <StatusBar
-                    backgroundColor={GLOBAL.COLOR.DARK_PRIMARY}
-                    barStyle="light-content"
-                />
-                <ListView
-                    dataSource={this.state.dataSource}
-                    renderRow={this.renderRow.bind(this)}
-                />
-                <ActionButton
-                    buttonColor="rgba(231,76,60,1)"
-                    onPress={this.props.onScanQrCodePressed}
-                />
-            </View>
-        );
     }
 }
 

@@ -8,7 +8,8 @@ const defaultBarCodes = [
 ];
 
 const defaultStore = {
-    barcodes: defaultBarCodes
+    barcodes: defaultBarCodes,
+    isLoaded: false,
 };
 
 function todoStore(state = defaultStore, action) {
@@ -22,6 +23,7 @@ function todoStore(state = defaultStore, action) {
         }];
         return Object.assign({}, state, {
             barcodes: newArray.concat(state.barcodes),
+            isLoaded: true,
         });
     default:
         return state;
