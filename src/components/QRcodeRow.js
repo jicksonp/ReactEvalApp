@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         alignItems: 'flex-end',
         justifyContent: 'flex-end',
     },
-    barcode_time: {
+    qrcode_time: {
         fontSize: 12,
         fontWeight: '200',
     },
@@ -49,7 +49,7 @@ class QRcodeRow extends Component {
                     {this.props.barcode.code}
                 </Text>
                 <View style={styles.qrcode_time_container}>
-                    <Text style={styles.barcode_time}>
+                    <Text style={styles.qrcode_time}>
                         {toDateString(this.props.barcode.time)}
                     </Text>
                 </View>
