@@ -18,11 +18,17 @@ function todoStore(state = defaultStore, action) {
         // Copy the element in front of array.
         console.log('State update called', action);
         const newArray = [{
-            code: action.qrcode,
-            time: new Date().getTime(),
+            code: action.qrcode.code,
+            time: action.qrcode.time,
         }];
         return Object.assign({}, state, {
             barcodes: newArray.concat(state.barcodes),
+            isLoaded: true,
+        });
+    case 'UPDATE_ALL_QR_CODES':
+        console.log('State update called UPDATE_ALL_QR_CODES ', action);
+        return Object.assign({}, state, {
+            barcodes: action.qrcodes,
             isLoaded: true,
         });
     default:

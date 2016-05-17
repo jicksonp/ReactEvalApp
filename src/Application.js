@@ -14,6 +14,9 @@ import Navigate from './utils/Navigate';
 import { Toolbar } from './components';
 import Navigation from './scenes/Navigation';
 import store from './stores/ReactEvalStore';
+import * as GLOBAL from './utils/Globals';
+
+const Firebase = require('firebase');
 
 class Application extends Component {
 
@@ -24,6 +27,7 @@ class Application extends Component {
 
 	constructor(props) {
 		super(props);
+		this.itemsRef = this.getRef().child(GLOBAL.FIREBASE_KEY);
 		this.state = {
 			drawer: null,
 			navigator: null,
@@ -34,9 +38,14 @@ class Application extends Component {
             // Do this only when you are sure that you are calling set state using redux store.
             this.setState({
 				barcodes: store.getState().barcodes,
+				isLoaded: store.getState().isLoaded,
 			}); // eslint-disable-line react/no-set-state
         });
 	}
+
+	getRef() {
+    	return new Firebase(GLOBAL.FIREBASE_URL);
+  	}
 
 	getChildContext = () => {
 		return {
@@ -58,12 +67,41 @@ class Application extends Component {
 	};
 
 
-    onQrCodeRead(qrcode) {
-        this.state.navigator.back();
-        store.dispatch({
-            type: 'ADD_QR_CODE',
-            qrcode,
-        });
+	componentDidMount() {
+    	this.listenForItems(this.itemsRef);
+  	}
+
+	listenForItems(itemsRef) {
+		itemsRef.on('value', (snap) => {
+			// get children as an array
+			var qrcodes = [];
+			snap.forEach((child) => {
+				qrcodes.push({
+				  code: child.val().code,
+				  time: child.val().time,
+				  _key: child.key(),
+				});
+			});
+			qrcodes.reverse();
+			console.log('Data recieved listenForItems',qrcodes);
+			store.dispatch({
+				type: 'UPDATE_ALL_QR_CODES',
+				qrcodes,
+			});
+	    });
+  	}
+
+
+    onQrCodeRead(code) {
+
+		this.state.navigator.back();
+		const qrcode = {
+			code: code ,
+            time: new Date().getTime(),
+		};
+
+		//TODO check if this is right
+		this.itemsRef.push(qrcode);
     }
 
 	onScanQrCodePressed() {
@@ -107,6 +145,7 @@ class Application extends Component {
 										title={route.title}
 										path={route.path}
 										barcodes={this.state.barcodes}
+										isLoaded={this.state.isLoaded}
 					                    onScanQrCodePressed={this.onScanQrCodePressed.bind(this)}
 										onQrCodeRead={this.onQrCodeRead.bind(this)}
 										{...route.props}

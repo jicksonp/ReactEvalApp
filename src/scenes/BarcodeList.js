@@ -46,6 +46,9 @@ class BarcodeList extends Component {
             .state
             .dataSource
             .cloneWithRows(nextProps.barcodes);
+
+        console.log('componentWillReceiveProps ',nextProps);
+
         // Below comment is used to remove the lint warning.
         // Do this only when you are sure that you are calling set state using redux store.
         this.setState({

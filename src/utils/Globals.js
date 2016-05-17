@@ -1,4 +1,6 @@
 module.exports = {
+    FIREBASE_URL: 'https://reactevalapp.firebaseio.com/',
+    FIREBASE_KEY: 'qrcodes',
     SCREEN_TITLE: {
         QR_CODE_SCANNER: 'QR Code Scanner',
         SCAN_QR_CODE: 'Scan QR Code',
