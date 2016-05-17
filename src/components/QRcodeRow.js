@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     },
 });
 
-class BarcodeRow extends Component {
+class QRcodeRow extends Component {
     render() {
         return (
             <View style={styles.container}>
@@ -58,11 +58,11 @@ class BarcodeRow extends Component {
     }
 }
 
-BarcodeRow.propTypes = {
+QRcodeRow.propTypes = {
     barcode: React.PropTypes.shape({
         code: React.PropTypes.string.isRequired,
         time: React.PropTypes.number.isRequired,
     }).isRequired,
 };
 
-export default BarcodeRow;
+export default QRcodeRow;
