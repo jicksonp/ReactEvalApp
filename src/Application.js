@@ -179,4 +179,8 @@ global.LOG = (...args) => {
     return args[args.length - 1];
 };
 
+//TODO move this to config file
+console.disableYellowBox = true;
+console.warn('YellowBox is disabled.');
+
 module.exports = Application;
