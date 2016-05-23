@@ -68,7 +68,7 @@ export default class Navigation extends Component {
                     },
                     {
                         icon: 'home',
-                        value: 'Github API',
+                        value: 'Github Profile API',
                         active: !route || route === 'github',
                         onPress: () => this.changeScene('github'),
                         onLongPress: () => this.changeScene('github')

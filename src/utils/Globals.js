@@ -4,7 +4,7 @@ module.exports = {
     SCREEN_TITLE: {
         QR_CODE_SCANNER: 'QR Code Scanner',
         SCAN_QR_CODE: 'Scan QR Code',
-        GITHUB_API: 'Github Api',
+        GITHUB_API: 'Github Profile API',
         LOGOUT: 'Logout',
     },
     COLOR: {
