@@ -14,6 +14,7 @@ import {
 } from 'react-native-material-design';
 
 import * as GLOBAL from '../utils/Globals';
+import NetworkImageView from '../components/NetworkImageView';
 
 const styles = StyleSheet.create({
     container: {
@@ -51,7 +52,7 @@ class GithubApis extends Component {
 
     constructor(props, context) {
         super(props, context);
-        this.github_username = 'vishalvijay';
+        this.github_username = 'mojombo';
         this.github_url = 'https://api.github.com/users/';
 
         this.state = {
@@ -117,7 +118,7 @@ class GithubApis extends Component {
         if (this.state.isLoaded) {
             return (
                 <View style={styles.container}>
-                    <Image
+                    <NetworkImageView
                         source={{ uri: this.state.user.avatar_url }}
                         style={styles.profile}
                     />
