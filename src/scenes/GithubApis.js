@@ -6,11 +6,10 @@ import {
   Text,
   ProgressBarAndroid as ProgressBar,
   StyleSheet,
-  Image,
 } from 'react-native';
 
 import {
-    Button,
+    Card,
 } from 'react-native-material-design';
 
 import * as GLOBAL from '../utils/Globals';
@@ -23,6 +22,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         paddingTop: 16,
+    },
+    card_container: {
+        padding: 16,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     loading: {
         justifyContent: 'center',
@@ -123,14 +127,16 @@ class GithubApis extends Component {
         if (this.state.isLoaded) {
             return (
                 <View style={styles.container}>
-                    <NetworkImageView
-                        source={{ uri: this.state.user.avatar_url }}
-                        style={styles.profile}
-                    />
-                    <Text style={styles.name}>{this.state.user.name}</Text>
-                    <Text style={styles.handle}>@{this.state.user.login}</Text>
-                    <Text style={styles.email}>{this.state.user.email}</Text>
-                    <Text style={styles.email}>{this.state.user.location}</Text>
+                    <Card style={styles.card_container}>
+                        <NetworkImageView
+                            source={{ uri: this.state.user.avatar_url }}
+                            style={styles.profile}
+                        />
+                        <Text style={styles.name}>{this.state.user.name}</Text>
+                        <Text style={styles.handle}>@{this.state.user.login}</Text>
+                        <Text style={styles.email}>{this.state.user.email}</Text>
+                        <Text style={styles.email}>{this.state.user.location}</Text>
+                    </Card>
                 </View>
             );
         } else {
