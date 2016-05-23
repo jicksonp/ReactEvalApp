@@ -26,11 +26,7 @@ const styles = StyleSheet.create({
         backgroundColor: GLOBAL.COLOR.BACKGROUND,
         flex: 1,
         justifyContent: 'flex-start',
-    },
-    list_style: {
-        paddingTop: 8,
-        paddingLeft: 8,
-        paddingRight: 8,
+        padding: 8,
     },
     loading:{
         justifyContent: 'center',
