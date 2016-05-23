@@ -9,12 +9,17 @@ import {
   ListView,
   PropTypes,
   ProgressBarAndroid as ProgressBar,
+  Platform,
 } from 'react-native';
 
 import ActionButton from 'react-native-action-button';
 
 import * as GLOBAL from '../utils/Globals';
 import QRcodeRow from '../components/QRcodeRow';
+
+// FIXME: Android has a bug when scrolling ListView the view insertions
+// will make it go reverse. Temporary fix - pre-render more rows
+const LIST_VIEW_PAGE_SIZE = Platform.OS === 'android' ? 20 : 1;
 
 const styles = StyleSheet.create({
     container: {
@@ -83,6 +88,7 @@ class QRcodeList extends Component {
                 <View style={styles.container}>
                     <ListView
                         dataSource={this.state.dataSource}
+                        pageSize={LIST_VIEW_PAGE_SIZE}
                         renderRow={this.renderRow.bind(this)}
                     />
                     <ActionButton
