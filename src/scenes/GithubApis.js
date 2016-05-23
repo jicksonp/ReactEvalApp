@@ -38,9 +38,14 @@ const styles = StyleSheet.create({
         color: GLOBAL.COLOR.PRIMARY_TEXT,
     },
     handle: {
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: '300',
         color: GLOBAL.COLOR.SECONDARY_TEXT,
+    },
+    email: {
+        fontSize: 16,
+        fontWeight: '400',
+        color: GLOBAL.COLOR.PRIMARY_TEXT,
     },
     follower_container: {
         flexDirection: 'row',
@@ -124,10 +129,8 @@ class GithubApis extends Component {
                     />
                     <Text style={styles.name}>{this.state.user.name}</Text>
                     <Text style={styles.handle}>@{this.state.user.login}</Text>
-                    <View style={styles.follower_container}>
-                        <Button value="Followers" raised={true} onPress={()=> console.log("I pressed a flat button")} />
-                        <Button value="Following" raised={true} onPress={()=> console.log("I pressed a raised button")} />
-                    </View>
+                    <Text style={styles.email}>{this.state.user.email}</Text>
+                    <Text style={styles.email}>{this.state.user.location}</Text>
                 </View>
             );
         } else {
