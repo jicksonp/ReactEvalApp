@@ -26,6 +26,8 @@ const styles = StyleSheet.create({
         backgroundColor: GLOBAL.COLOR.BACKGROUND,
         flex: 1,
         justifyContent: 'flex-start',
+    },
+    list_style: {
         paddingTop: 8,
         paddingLeft: 8,
         paddingRight: 8,
@@ -90,6 +92,7 @@ class QRcodeList extends Component {
                         dataSource={this.state.dataSource}
                         pageSize={LIST_VIEW_PAGE_SIZE}
                         renderRow={this.renderRow.bind(this)}
+                        style = {styles.list_style}
                     />
                     <ActionButton
                         buttonColor="rgba(231,76,60,1)"
