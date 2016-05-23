@@ -7,22 +7,20 @@ import {
   View,
 } from 'react-native';
 
+import {
+    Card,
+} from 'react-native-material-design';
+
 import * as GLOBAL from '../utils/Globals';
 import { toDateString } from '../utils/Utils';
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: GLOBAL.COLOR.BACKGROUND,
-        borderWidth: 1,
-        borderColor: '#E7E7E7',
-        borderRadius: 2,
-        padding: 8,
+        paddingTop: 8,
+        paddingBottom: 8,
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'space-between',
-        marginBottom: 8,
-        marginLeft: 16,
-        marginRight: 16,
     },
     qrcode_label: {
         fontSize: 16,
@@ -44,16 +42,18 @@ const styles = StyleSheet.create({
 class QRcodeRow extends Component {
     render() {
         return (
-            <View style={styles.container}>
-                <Text style={styles.qrcode_label}>
-                    {this.props.qrcode.code}
-                </Text>
-                <View style={styles.qrcode_time_container}>
-                    <Text style={styles.qrcode_time}>
-                        {toDateString(this.props.qrcode.time)}
+            <Card>
+                <View style={styles.container}>
+                    <Text style={styles.qrcode_label}>
+                        {this.props.qrcode.code}
                     </Text>
+                    <View style={styles.qrcode_time_container}>
+                        <Text style={styles.qrcode_time}>
+                            {toDateString(this.props.qrcode.time)}
+                        </Text>
+                    </View>
                 </View>
-            </View>
+            </Card>
         );
     }
 }

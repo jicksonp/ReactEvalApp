@@ -21,7 +21,9 @@ const styles = StyleSheet.create({
         backgroundColor: GLOBAL.COLOR.BACKGROUND,
         flex: 1,
         justifyContent: 'flex-start',
-        paddingTop: 16,
+        paddingTop: 8,
+        paddingLeft: 8,
+        paddingRight: 8,
     },
     loading:{
         justifyContent: 'center',
