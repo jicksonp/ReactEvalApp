@@ -14,6 +14,11 @@ export default {
         },
     },
 
+    map: {
+        title: GLOBAL.SCREEN_TITLE.MAP,
+        component: require('./scenes/MapScreen').default,
+    },
+
     github: {
         title: GLOBAL.SCREEN_TITLE.GITHUB_API,
         component: require('./scenes/GithubApis').default,

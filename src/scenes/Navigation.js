@@ -73,6 +73,13 @@ export default class Navigation extends Component {
                         onPress: () => this.changeScene('github'),
                         onLongPress: () => this.changeScene('github')
                     },
+                    {
+                        icon: 'map',
+                        value: 'Map',
+                        active: !route || route === 'map',
+                        onPress: () => this.changeScene('map'),
+                        onLongPress: () => this.changeScene('map')
+                    },
                     // {
                     //     icon: 'home',
                     //     value: 'Logout',
