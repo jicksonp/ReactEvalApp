@@ -17,6 +17,7 @@
     "react-native-action-button": "^1.0.8",
     "react-native-android-statusbar": "^0.1.2",
     "react-native-barcodescanner": "^1.0.1",
+    "react-native-maps": "^0.4.2",
     "react-native-material-design": "git+https://github.com/react-native-material-design/react-native-material-design.git",
     "redux": "^3.3.1"
   }
