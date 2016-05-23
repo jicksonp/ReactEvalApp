@@ -67,7 +67,7 @@ export default class Navigation extends Component {
                         onLongPress: () => this.changeScene('qrcodelist')
                     },
                     {
-                        icon: 'home',
+                        icon: 'perm-identity',
                         value: 'Github Profile API',
                         active: !route || route === 'github',
                         onPress: () => this.changeScene('github'),
